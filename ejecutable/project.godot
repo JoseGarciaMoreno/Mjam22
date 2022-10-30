@@ -10,8 +10,9 @@ config_version=4
 
 [application]
 
-config/name="RigidBody Character 3D"
-config/description="Rigidbody character demo for 3D using a capsule for the character.
+config/name="Mastering fire"
+config/description="Mastering fire for Murcia Game Jam 2022
+Rigidbody character demo for 3D using a capsule for the character.
 "
 run/main_scene="res://level.tscn"
 config/icon="res://icon.png"

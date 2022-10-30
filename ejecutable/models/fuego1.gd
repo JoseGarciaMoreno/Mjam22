@@ -8,7 +8,7 @@ var quemando
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	scale_object_local(Vector3(1,1,5))
+	scale_object_local(Vector3(1,1,1))
 	pass # Replace with function body.
 
 
@@ -16,8 +16,8 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-func _on_Area_body_entered(body):
-	print("detectando", body, str(body.name))
-	print("detectando")
-	pass # Replace with function body.
+#
+#func _on_AreaF_body_entered(body):
+#	print("detectando", body, str(body.name))
+#	print("detectando")
+#	pass # Replace with function body.

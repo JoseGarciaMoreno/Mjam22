@@ -4,23 +4,23 @@ onready var raycast = $RayCast
 onready var camera = $Target/Camera
 onready var start_position = translation
 
+
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("reset_position"):
 		translation = start_position
 		return
-
 	var dir = Vector3()
+	
 	dir.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	dir.z = Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")
-
+	print(dir)
 	# Get the camera's transform basis, but remove the X rotation such
 	# that the Y axis is up and Z is horizontal.
 	var cam_basis = camera.global_transform.basis
 	var basis = cam_basis.rotated(cam_basis.x, -cam_basis.get_euler().x)
 	dir = basis.xform(dir)
-
 	apply_central_impulse(dir.normalized() / 10)
 
 	# Jumping code.
@@ -37,3 +37,17 @@ func on_ground():
 func _on_tcube_body_entered(body):
 	if body == self:
 		get_node("WinText").show()
+
+#func _on_TextureButton_pressed():
+#	print("toquq")
+#	pass # Replace with function body.
+
+#func _on_ButtonAl_pressed():
+#	var dir = Vector3()
+#	print("toquq")
+#	dir.x = -10
+#	pass # Replace with function body.
+#	var cam_basis = camera.global_transform.basis
+#	var basis = cam_basis.rotated(cam_basis.x, -cam_basis.get_euler().x)
+#	dir = basis.xform(dir)
+#	apply_central_impulse(dir.normalized() / 10)
