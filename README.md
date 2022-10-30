@@ -1,11 +1,38 @@
 # Mjam22
 ## Murcia Game Jam 2022
 
-Asset: Imagen Bosque Alejandro Terenzani
+Asset: Música
+
+Obra: Noche y Día Loop 1
+
+Autor: https://www.fiftysounds.com 
+
+https://www.fiftysounds.com/es/musica-libre-de-derechos/noche-y-dia-loop-1.html  
+
+
+Asset: Sonido piedras extracto: 
+
+Autor “Sonidos para videos SIN COPYRIGHT”
+
+https://www.youtube.com/watch?v=bb851R5r98M  
+
+
+Asset: Sonido Win (aplausos)
+
+Autor: Audiosound
+
+https://www.youtube.com/watch?v=LLVX9rm8TOc 
+
+
+Asset: Imagen Bosque Autor: Alejandro Terenzani
 
 http://ciberestetica.blogspot.com/2022/07/paisaje-de-bosque-en-pixel-art.html 
 
-Asset 3D
+Asset 3D MIT License
+
+Copyright (c) 2007-2022 Juan Linietsky, Ariel Manzur.
+
+Copyright (c) 2014-2022 Godot Engine contributors.
 
 https://github.com/godotengine/godot-demo-projects/tree/3.4-b0d4a7c/3d/rigidbody_character 
 
