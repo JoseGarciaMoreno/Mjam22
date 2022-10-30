@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Piedras.mp3-3fbb17d39b9f7c800631c82de6f584f7.mp3str"
+
+[deps]
+
+source_file="res://sonido/Piedras.mp3"
+dest_files=[ "res://.import/Piedras.mp3-3fbb17d39b9f7c800631c82de6f584f7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

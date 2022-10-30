@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://models/perrito2.dae" type="PackedScene" id=1]
 [ext_resource path="res://models/perrito.gd" type="Script" id=2]
 [ext_resource path="res://fuentes/Firestarter.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://models/fuego2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://imagenes/dragon-fuego.png" type="Texture" id=5]
+[ext_resource path="res://imagenes/gargola desubicada.png" type="Texture" id=6]
+[ext_resource path="res://imagenes/calavera2.png" type="Texture" id=7]
+[ext_resource path="res://sonido/Aplausos.mp3" type="AudioStream" id=8]
 
 [sub_resource type="CapsuleShape" id=1]
 margin = 1.0
@@ -26,6 +29,9 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="TimerWin" type="Timer" parent="."]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TimerWin"]
+stream = ExtResource( 8 )
+
 [node name="Area" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
@@ -44,6 +50,15 @@ margin_bottom = 104.0
 custom_fonts/font = SubResource( 3 )
 
 [node name="TimerM" type="Timer" parent="hud/mensaje"]
+
+[node name="Sprite" type="Sprite" parent="hud"]
+position = Vector2( 868, 291 )
+texture = ExtResource( 6 )
+
+[node name="cal" type="Sprite" parent="hud"]
+position = Vector2( 853, 303 )
+scale = Vector2( 4.21875, 4.46875 )
+texture = ExtResource( 7 )
 
 [node name="fuego2" parent="." instance=ExtResource( 4 )]
 

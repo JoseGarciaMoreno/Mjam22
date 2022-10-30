@@ -7,19 +7,20 @@ var banderaGM = false
 var inicio = true
 var limGOI = -5
 var limGOS = 16
-var limINF = 3
-var limSUP = 10
+var limINF = 8
+var limSUP = 11
 var limH = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$hud/mensa/TimerInicio.start(3)
+	$hud/mensa/TimerInicio.start(3+3)
 	$hud/AnimatedSprite.hide()
 	$hud/AnimatedSprite2.hide()
 	$hud/mensa.text = "Press with rhythm"
-	$hud/mensa/TimerM.start(3)
+	$hud/mensa/TimerM.start(3+3)
 	$hud/caliente.hide()
 	$hud/fria.hide()
+	$hud/Sprite.hide()
 #	$hud/cargando.hide()
 #	print($hud/cargando.get_text(),)
 	$hud/cargando.text = "The beginning ..."
@@ -31,6 +32,7 @@ func _on_TextureButton_button_up():
 	fuego +=1
 	$AnimatedSprite.play("default")
 	$TimerCarga.start(0.35)
+	$AnimatedSprite/AudioPiedra.play(0.44)
 #	print("anima suma",fuego)
 	
 	_comprobar()
@@ -48,6 +50,7 @@ func _on_TextureButton_button_up():
 	pass # Replace with function body.
 
 func _on_TimerCarga_timeout():
+	$AnimatedSprite/AudioPiedra.stop()
 	$AnimatedSprite.stop()
 	$TimerCarga.stop()
 #	$TimerCarga.start(0.1)
@@ -70,6 +73,7 @@ func _on_TimerDescarga_timeout():
 	if (fuego < limGOI or fuego > limGOS):
 		print("game over ",fuego)
 		$hud/mensa.text = "GAME OVER"
+		$hud/Sprite.show()
 		if (!banderaGM):
 			banderaGM = true
 			$hud/mensa/TimerGO.start(3)
@@ -81,6 +85,7 @@ func _on_TimerControl_timeout():
 			banderaWin = true
 			print("win",fuego)
 			$hud/mensa.text = "¡You WIN! ,  ¡maquina!"
+			$hud/AudioAplauso.play(0)
 			$hud/AnimatedSprite.show()
 			$hud/AnimatedSprite2.show()
 			$hud/AnimatedSprite2.play("fuegoA")
@@ -102,6 +107,7 @@ func _on_TimerInicio_timeout():
 	$TimerDescarga.start(0.6)
 	$hud/mensa/TimerInicio.stop()
 	$hud/cargando.hide()
+	$hud/mensa.text = "Press with rhythm"
 	pass # Replace with function body.
 
 func _comprobar():

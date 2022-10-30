@@ -13,10 +13,12 @@ var buckeWIN=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$hud/mensaje.text = "Calienta el hod dog para el malo"
-	$hud/mensaje/TimerM.start(3)
+	$hud/mensaje/TimerM.start(3+3)
 	$fuego2.hide()
 	$TimerDragon.start(47)
 	$dragon.hide()
+	$hud/Sprite.hide()
+	$hud/cal.hide()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,14 +41,15 @@ func _on_Area_area_exited(_area):
 func _on_tiempoPe_timeout():
 	niQue +=1 
 	print("nivel",niQue)
-	if (niQue == 10):
+	if (niQue == 13):
 		$hud/mensaje.text = "Cudiado que No se queme"
 		$hud/mensaje/TimerM.start(3)
 		$fuego2.show()
 		$TimerWin.start(tiempoGB+3)
 
-	if (niQue == 15 and !WIN):
+	if (niQue == 17 and !WIN):
 		$hud/mensaje.text = "GAME OVER"
+		$hud/cal.show()
 		GO = true
 		$TimerGO.start(tiempoGB+1)
 #		print("entra quema", niQue)
@@ -65,6 +68,7 @@ func _on_TimerM_timeout():
 	else:
 		if(GO):
 			$hud/mensaje.text = "GAME OVER 2"
+			$hud/cal.show()
 		else:
 			$hud/mensaje.text = ""
 			$hud/mensaje/TimerM.stop()
@@ -82,7 +86,9 @@ func _on_TimerWin_timeout():
 			print("hacho)")
 #			$hud/mensaje.size_flags_vertical = 122.2
 			$hud/mensaje.text = "YOU WIN, maquina"
+			$TimerWin/AudioStreamPlayer.play(0)
 			$dragon.show()
+			$hud/Sprite.show()
 			WIN = true
 			$TimerWin.start(tiempoGB+5)
 #	get_tree().reload_current_scene()
@@ -91,6 +97,7 @@ func _on_TimerWin_timeout():
 
 func _on_TimerDragon_timeout():
 	$hud/mensaje.text = "GAME OVER"
+	$hud/cal.show()
 	GO = true
 	$TimerGO.start(tiempoGB+1)
 	

@@ -15,7 +15,7 @@ func _physics_process(_delta):
 	
 	dir.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	dir.z = Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")
-	print(dir)
+#	print(dir)
 	# Get the camera's transform basis, but remove the X rotation such
 	# that the Y axis is up and Z is horizontal.
 	var cam_basis = camera.global_transform.basis

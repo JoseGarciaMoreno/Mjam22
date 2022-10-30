@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://cubelib.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://player/cubio.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://models/mushroom.glb" type="PackedScene" id=5]
 [ext_resource path="res://level.gd" type="Script" id=6]
 [ext_resource path="res://cube_rigidbody.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sonido/Night and Day Loop 1.ogg" type="AudioStream" id=8]
+[ext_resource path="res://models/fuego3SA.tscn" type="PackedScene" id=9]
 
 [sub_resource type="BoxShape" id=1]
 margin = 0.001
@@ -134,6 +136,26 @@ transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0385653, -6.31047, 0.147871 )
 shape = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -15.0
+autoplay = true
+
+[node name="fuego4" parent="." instance=ExtResource( 9 )]
+transform = Transform( 20, 0, 0, 0, 3, 0, 0, 0, 20, -14.4727, 0, 3.90487 )
+
+[node name="fuego5" parent="." instance=ExtResource( 9 )]
+transform = Transform( 20, 0, 0, 0, 3, 0, 0, 0, 20, -14.4727, 0, 3.90487 )
+
+[node name="fuego6" parent="." instance=ExtResource( 9 )]
+transform = Transform( 20, 0, 0, 0, 3, 0, 0, 0, 20, 10.397, 0, 3.90487 )
+
+[node name="fuego7" parent="." instance=ExtResource( 9 )]
+transform = Transform( 20, 0, 0, 0, 3, 0, 0, 0, 20, -1.25141, 0, 18.4305 )
+
+[node name="fuego8" parent="." instance=ExtResource( 9 )]
+transform = Transform( 20, 0, 0, 0, 3, 0, 0, 0, 20, -1.25141, 0, -10.7303 )
 
 [connection signal="body_entered" from="Princess" to="Cubio" method="_on_tcube_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
