@@ -1,6 +1,9 @@
 # Mjam22
-## Murcia Game Jam 2022
------------------------------- Licences  ------------------------
+## Murcia Game Jam 2022: History of Fire
+
+----------------------------------------------------------
+
+## License
 
 Asset: Música
 
@@ -18,6 +21,7 @@ Autor “Sonidos para videos SIN COPYRIGHT”
 
 https://www.youtube.com/watch?v=bb851R5r98M  
 
+-----------------------------------------------------------
 
 Asset: Sonido Win (aplausos)
 
@@ -25,10 +29,13 @@ Autor: Audiosound
 
 https://www.youtube.com/watch?v=LLVX9rm8TOc 
 
+-----------------------------------------------------------
 
 Asset: Imagen Bosque Autor: Alejandro Terenzani
 
 http://ciberestetica.blogspot.com/2022/07/paisaje-de-bosque-en-pixel-art.html 
+
+-----------------------------------------------------------
 
 Asset 3D MIT License
 
@@ -110,8 +117,3 @@ desktop. For the best performance, consider downloading the demos.
 - [Documentation](http://docs.godotengine.org)
 - [Community hub](https://godotengine.org/community)
 - [TPS demo](https://github.com/godotengine/tps-demo)
-
-## License
-
-Those demos are distributed under the terms of the MIT license, as
-described in the [LICENSE.md](LICENSE.md) file.
