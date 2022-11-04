@@ -80,6 +80,7 @@ func _on_TimerWin_timeout():
 	if (WIN):
 		$TimerWin.stop()
 		print(get_tree().change_scene("res://pantallas/origenF.tscn"))
+		
 #		print(get_tree().reload_current_scene())
 	else:
 		if(!GO):

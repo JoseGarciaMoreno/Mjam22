@@ -99,7 +99,8 @@ func _on_TimerM_timeout():
 	$hud/mensa/TimerM.stop()
 	if (banderaWin):
 		print ("saltar pantalla")
-		print(get_tree().change_scene("res://level.tscn"))
+#		print(get_tree().change_scene("res://level.tscn"))
+		print(get_tree().change_scene("res://pantallas/plataBuena.tscn"))
 #		print(get_tree().reload_current_scene())
 		pass # Replace with function body.
 
